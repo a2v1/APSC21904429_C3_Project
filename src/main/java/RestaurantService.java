@@ -6,8 +6,17 @@ public class RestaurantService {
     private static List<Restaurant> restaurants = new ArrayList<>();
 
     public Restaurant findRestaurantByName(String restaurantName){
-        
-        return restaurant;
+        if(restaurantName.isEmpty())
+            return null;
+
+        for(Restaurant item : restaurants)
+        {
+            if(item.getName().compareToIgnoreCase(restaurantName) == 0)
+            {
+                return item;
+            }
+        }
+        return null;
     }
 
 

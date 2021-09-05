@@ -18,15 +18,30 @@ public class Restaurant {
     }
 
     public boolean isRestaurantOpen() {
-        return true;
-        //DELETE ABOVE STATEMENT AND WRITE CODE HERE
+
+        System.out.println("isRestaurantOpen- called");
+        if(getCurrentTime().compareTo(openingTime) > 0 && getCurrentTime().compareTo(closingTime) < 0)
+            return true;
+        else
+            return false;
     }
 
     public LocalTime getCurrentTime(){ return  LocalTime.now(); }
 
+    public int GetTotalValueOfOrder()
+    {
+        int total = 0;
+        for(Item item: menu) {
+                total += item.getPrice();
+        }
+        return total;
+    }
+
     public List<Item> getMenu() {
-        return null;
-        //DELETE ABOVE RETURN STATEMENT AND WRITE CODE HERE
+        if(menu.isEmpty())
+            return null;
+
+        return menu;
     }
 
     private Item findItemByName(String itemName){
