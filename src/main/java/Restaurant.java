@@ -19,7 +19,6 @@ public class Restaurant {
 
     public boolean isRestaurantOpen() {
 
-        System.out.println("isRestaurantOpen- called");
         if(getCurrentTime().compareTo(openingTime) > 0 && getCurrentTime().compareTo(closingTime) < 0)
             return true;
         else
